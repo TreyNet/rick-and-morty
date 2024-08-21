@@ -22,15 +22,16 @@ body {
   background-color: #1ba94c;
   color: #ffffff;
   box-shadow: 0 4px 12px rgb(27 169 76 / 50%);
-  border-radius: 25%;
+  border-radius: 12px;
   font-size: 18px;
-  padding-left: 1.528em;
-  padding-right: 1.528em;
+  padding-left: 24px;
+  padding-right: 24px;
   padding-top: 0;
   padding-bottom: 0;
-  min-height: 2.778em;
+  min-height: 42px;
   border: none;
   cursor: pointer;
+  margin-bottom: 32px;
 }
 
 .btn-search:hover {
@@ -43,24 +44,32 @@ body {
   padding: 50px;
 }
 
-.characters h1 {
+.characters h2 {
   margin-top: 0;
 }
 
 .container-characters {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px; /* Añade espacio entre los contenedores */
   width: 100%;
   padding-bottom: 50px;
+  padding-left: 10px; /* Espacio lateral para evitar que se peguen al borde */
+  padding-right: 10px;
 }
 
 .character-container {
   display: flex;
   background: #3c3e44;
-  margin: 20px 10px;
+  margin: 10px;
   border-radius: 10px;
   align-items: flex-start;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 200px; /* Altura fija para el contenedor */
 }
+
 
 .character-container h3 {
   margin: 10px 0;
@@ -77,9 +86,9 @@ body {
 
 .character-container .dead,
 .alive {
-  height: 0.5rem;
-  width: 0.5rem;
-  margin-right: 0.375rem;
+  height: 8px;
+  width: 8px;
+  margin-right: 6px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -105,16 +114,17 @@ body {
 }
 
 .character-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 150px; /* Ancho fijo para todas las imágenes */
+  height: 100%; 
+  object-fit: cover; /* Asegura que la imagen se recorte correctamente para llenar el espacio */
   border-radius: 10px 0 0 10px;
+  flex-shrink: 0; /* Evita que la imagen se reduzca si el contenedor es más pequeño */
 }
 
 .character-container p {
-  font-size: 17px;
+  font-size: 16px;
   text-align: center;
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
 .text-grey {
@@ -122,29 +132,7 @@ body {
 }
 
 .back-home {
-  text-decoration: underline;
   cursor: pointer;
-  font-size: 15px;
-}
-
-@media (max-width: 768px) {
-  .characters {
-    padding: 0 20px;
-  }
-
-  .container-characters {
-    display: table-cell;
-  }
-
-  .character-container {
-    width: auto;
-  }
-
-  .character-container {
-    margin: 10px 0;
-  }
-
-  .character-container img {
-    width: 150px;
-  }
+  font-size: 18px;
+  margin-bottom: 8px;
 }
